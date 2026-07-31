@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bin Hafiz Mall | House of Brands</title>
+<meta name="description" content="Bin Hafiz Mall - House of Brands. Premium men's & women's apparel, and luxury watches. Near UBL Bank, Safdarabad." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0b0b0b] text-white selection:bg-[#d4af37]/30 selection:text-[#f3e5ab] antialiased">
+
+<!-- Scroll Progress Bar -->
+<div id="scrollProgress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#D4AF37] via-[#FFF0B2] to-[#AA771C] z-50 transition-all duration-150 shadow-[0_0_10px_#d4af37]" style="width:0%"></div>
+
+<!-- Loading Screen -->
+<div id="loadingScreen" class="fixed inset-0 z-50 bg-[#080808] flex flex-col items-center justify-center transition-opacity duration-500">
+  <div class="animate-pulse flex flex-col items-center">
+    <div id="loadingLogo"></div>
+    <h1 class="font-serif-luxury font-bold text-2xl text-white tracking-widest mt-6 uppercase">BIN HAFIZ MALL</h1>
+    <p class="text-xs font-semibold tracking-[0.3em] text-[#d4af37] mt-1 uppercase">HOUSE OF BRANDS</p>
+  </div>
+</div>
+
+<div class="min-h-screen bg-[#0b0b0b] text-white relative">
+
+  <!-- Navbar -->
+  <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-gradient-to-b from-[#000000]/90 via-[#000000]/40 to-transparent py-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <a href="#home" class="nav-anchor flex items-center gap-3 group">
+          <div id="navLogo"></div>
+          <div class="flex flex-col">
+            <span class="font-serif-luxury font-bold text-lg sm:text-xl text-white tracking-wider group-hover:text-[#f3e5ab] transition-colors">BIN HAFIZ MALL</span>
+            <span class="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] text-[#d4af37] -mt-1 uppercase">House of Brands</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <a href="#home" data-section="home" class="nav-anchor nav-link px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full relative text-gray-300 hover:text-white hover:bg-white/5">Home</a>
+          <a href="#men-dressing" data-section="men-dressing" class="nav-anchor nav-link px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full relative text-gray-300 hover:text-white hover:bg-white/5">Men Dressing</a>
+          <a href="#women-dressing" data-section="women-dressing" class="nav-anchor nav-link px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full relative text-gray-300 hover:text-white hover:bg-white/5">Women Dressing</a>
+          <a href="#watches" data-section="watches" class="nav-anchor nav-link px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full relative text-gray-300 hover:text-white hover:bg-white/5">Watches</a>
+          <a href="#contact" data-section="contact" class="nav-anchor nav-link px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-full relative text-gray-300 hover:text-white hover:bg-white/5">Contact Us</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="tt-link inline-flex items-center justify-center gap-1.5 font-bold tracking-wider text-white bg-black hover:bg-[#080808] border border-[#25F4EE] rounded-full shadow-[0_0_15px_rgba(37,244,238,0.3)] hover:shadow-[0_0_25px_rgba(37,244,238,0.5)] transition-all duration-300 uppercase px-3.5 py-1.5 text-xs">
+            <i data-lucide="music-2" class="w-4 h-4"></i><span>TikTok</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link inline-flex items-center justify-center gap-1.5 font-bold tracking-wider text-white bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all duration-300 uppercase px-3.5 py-1.5 text-xs">
+            <i data-lucide="message-circle" class="w-4 h-4"></i><span>WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="flex items-center md:hidden gap-2">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link p-2 text-white bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-md transition-colors">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+          </a>
+          <button id="menuBtn" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors border border-[#d4af37]/30" aria-label="Toggle Navigation Menu">
+            <i data-lucide="menu" class="w-6 h-6 text-[#d4af37]"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0e0e0e]/98 border-b border-[#d4af37]/30 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
+      <div class="flex flex-col space-y-1">
+        <a href="#home" class="nav-anchor px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-all">Home</a>
+        <a href="#men-dressing" class="nav-anchor px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-all">Men Dressing</a>
+        <a href="#women-dressing" class="nav-anchor px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-all">Women Dressing</a>
+        <a href="#watches" class="nav-anchor px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-all">Watches</a>
+        <a href="#contact" class="nav-anchor px-4 py-3 rounded-xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-all">Contact Us</a>
+      </div>
+      <div class="pt-3 border-t border-white/10 grid grid-cols-2 gap-3">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="tt-link w-full inline-flex items-center justify-center gap-1.5 font-bold tracking-wider text-white bg-black border border-[#25F4EE] rounded-full uppercase px-3.5 py-1.5 text-xs"><i data-lucide="music-2" class="w-4 h-4"></i><span>TikTok</span></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link w-full inline-flex items-center justify-center gap-1.5 font-bold tracking-wider text-white bg-[#25D366] rounded-full uppercase px-3.5 py-1.5 text-xs"><i data-lucide="message-circle" class="w-4 h-4"></i><span>WhatsApp</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#0b0b0b]">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#d4af37]/15 via-[#aa771c]/5 to-transparent rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="absolute bottom-10 left-10 w-80 h-80 bg-[#d4af37]/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute top-20 right-10 w-80 h-80 bg-[#f3e5ab]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div class="inline-block relative mb-6">
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#d4af37]/30 to-[#f3e5ab]/20 rounded-full blur-2xl animate-pulse-gold"></div>
+          <div id="heroLogo" class="mx-auto"></div>
+        </div>
+
+        <h1 class="font-serif-luxury font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-wider uppercase">
+          <span class="text-white">Bin Hafiz </span><span class="text-gold-gradient">Mall</span>
+        </h1>
+        <div class="mt-2 inline-flex items-center gap-3">
+          <span class="h-[1px] w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#d4af37]"></span>
+          <p class="text-base sm:text-xl font-bold tracking-[0.35em] text-[#d4af37] uppercase">HOUSE OF BRANDS</p>
+          <span class="h-[1px] w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#d4af37]"></span>
+        </div>
+
+        <div class="mt-10 max-w-2xl mx-auto">
+          <div class="glass-card rounded-2xl p-6 sm:p-7 relative border border-[#d4af37]/30 gold-border-glow">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/40 mb-3 text-xs font-bold text-[#f3e5ab] uppercase tracking-widest">
+              <span class="text-base">🚨</span><span>Our Goal</span>
+            </div>
+            <h2 class="text-lg sm:text-2xl font-extrabold text-white tracking-wide leading-snug">🫶🏻 TO MAKE BIN HAFIZ THE MOST TRUSTED BRAND.</h2>
+          </div>
+        </div>
+
+        <div class="mt-6 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:border-[#d4af37]/50 transition-colors">
+          <i data-lucide="map-pin" class="w-5 h-5 text-[#d4af37]"></i>
+          <span class="text-sm sm:text-base font-semibold text-gray-200 tracking-wide">📍 <span class="location-text"></span></span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link w-full sm:w-auto inline-flex items-center justify-center gap-3 font-bold tracking-wider text-white bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.7)] transition-all duration-300 uppercase px-8 py-4 text-base">
+            <i data-lucide="message-circle" class="w-6 h-6"></i><span>Chat on WhatsApp</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="tt-link w-full sm:w-auto inline-flex items-center justify-center gap-3 font-bold tracking-wider text-white bg-black hover:bg-[#080808] border border-[#25F4EE] rounded-full shadow-[0_0_15px_rgba(37,244,238,0.3)] hover:shadow-[0_0_25px_rgba(37,244,238,0.5)] transition-all duration-300 uppercase px-8 py-4 text-base">
+            <i data-lucide="music-2" class="w-6 h-6"></i><span>Visit TikTok</span>
+          </a>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <i data-lucide="shield-check" class="w-6 h-6 text-[#d4af37] shrink-0"></i>
+            <div><p class="text-xs font-bold text-white uppercase">100% Guaranteed</p><p class="text-[11px] text-gray-400">Premium Fabrics</p></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <i data-lucide="award" class="w-6 h-6 text-[#d4af37] shrink-0"></i>
+            <div><p class="text-xs font-bold text-white uppercase">House of Brands</p><p class="text-[11px] text-gray-400">Authentic Lineup</p></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <i data-lucide="sparkles" class="w-6 h-6 text-[#d4af37] shrink-0"></i>
+            <div><p class="text-xs font-bold text-white uppercase">Safdarabad Branch</p><p class="text-[11px] text-gray-400">Walk-In & Online</p></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <i data-lucide="message-circle" class="w-6 h-6 text-[#25D366] shrink-0"></i>
+            <div><p class="text-xs font-bold text-white uppercase">Instant Order</p><p class="text-[11px] text-gray-400">Direct WhatsApp</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEN DRESSING -->
+    <section id="men-dressing" class="py-20 bg-[#0e0e0e] relative">
+      <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/30 text-xs font-bold text-[#f3e5ab] uppercase tracking-widest mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#d4af37]"></i><span>Gentlemen's Apparel</span>
+          </div>
+          <h2 class="font-serif-luxury text-3xl sm:text-5xl font-extrabold text-white tracking-wide">Men <span class="text-gold-gradient">Dressing</span></h2>
+          <div class="h-1 w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div id="menGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- WOMEN DRESSING -->
+    <section id="women-dressing" class="py-20 bg-[#0b0b0b] relative">
+      <div class="absolute top-1/2 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/30 text-xs font-bold text-[#f3e5ab] uppercase tracking-widest mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#d4af37]"></i><span>Couture & Modest Fashion</span>
+          </div>
+          <h2 class="font-serif-luxury text-3xl sm:text-5xl font-extrabold text-white tracking-wide">Women <span class="text-gold-gradient">Dressing</span></h2>
+          <div class="h-1 w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div id="womenGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- WATCHES -->
+    <section id="watches" class="py-20 bg-[#0e0e0e] relative">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-4xl h-72 bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/30 text-xs font-bold text-[#f3e5ab] uppercase tracking-widest mb-3">
+            <i data-lucide="watch" class="w-3.5 h-3.5 text-[#d4af37]"></i><span>Horology & Luxury Timepieces</span>
+          </div>
+          <h2 class="font-serif-luxury text-3xl sm:text-5xl font-extrabold text-white tracking-wide">Men & Women <span class="text-gold-gradient">Watches</span></h2>
+          <div class="h-1 w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div id="watchGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-20 bg-[#0b0b0b] relative border-t border-b border-[#d4af37]/20">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-[0.3em] text-[#d4af37] uppercase">EXCELLENCE & INTEGRITY</span>
+          <h2 class="font-serif-luxury text-3xl sm:text-5xl font-extrabold text-white tracking-wide mt-2">Why Choose <span class="text-gold-gradient">Us</span></h2>
+          <p class="mt-3 text-sm sm:text-base text-gray-400">Dedicated to providing an uncompromised luxury retail experience at Bin Hafiz Mall.</p>
+          <div class="h-1 w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-card p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300 group hover:-translate-y-1">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#d4af37]/20 to-[#aa771c]/10 border border-[#d4af37]/40 flex items-center justify-center mb-6"><i data-lucide="award" class="w-7 h-7 text-[#f3e5ab]"></i></div>
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg text-[#d4af37]">✔</span><h3 class="font-serif-luxury text-xl font-bold text-white">Premium Quality</h3></div>
+            <p class="text-sm text-gray-400 leading-relaxed pl-6">Handpicked luxury fabrics, precision stitching, and flawless craftsmanship.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300 group hover:-translate-y-1">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#d4af37]/20 to-[#aa771c]/10 border border-[#d4af37]/40 flex items-center justify-center mb-6"><i data-lucide="shield-check" class="w-7 h-7 text-[#f3e5ab]"></i></div>
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg text-[#d4af37]">✔</span><h3 class="font-serif-luxury text-xl font-bold text-white">Trusted Brand</h3></div>
+            <p class="text-sm text-gray-400 leading-relaxed pl-6">Bin Hafiz Mall stands as Safdarabad's premier house of trusted brands.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300 group hover:-translate-y-1">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#d4af37]/20 to-[#aa771c]/10 border border-[#d4af37]/40 flex items-center justify-center mb-6"><i data-lucide="tag" class="w-7 h-7 text-[#f3e5ab]"></i></div>
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg text-[#d4af37]">✔</span><h3 class="font-serif-luxury text-xl font-bold text-white">Affordable Prices</h3></div>
+            <p class="text-sm text-gray-400 leading-relaxed pl-6">Direct outlet rates offering authentic luxury without markup.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300 group hover:-translate-y-1">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#d4af37]/20 to-[#aa771c]/10 border border-[#d4af37]/40 flex items-center justify-center mb-6"><i data-lucide="check-circle-2" class="w-7 h-7 text-[#f3e5ab]"></i></div>
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg text-[#d4af37]">✔</span><h3 class="font-serif-luxury text-xl font-bold text-white">Original Products</h3></div>
+            <p class="text-sm text-gray-400 leading-relaxed pl-6">100% genuine apparel, bags, accessories, and timepieces.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300 group hover:-translate-y-1">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#d4af37]/20 to-[#aa771c]/10 border border-[#d4af37]/40 flex items-center justify-center mb-6"><i data-lucide="headphones" class="w-7 h-7 text-[#f3e5ab]"></i></div>
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg text-[#d4af37]">✔</span><h3 class="font-serif-luxury text-xl font-bold text-white">Fast Customer Support</h3></div>
+            <p class="text-sm text-gray-400 leading-relaxed pl-6">Instant response on WhatsApp for orders, sizing, and inquiries.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300 group hover:-translate-y-1">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#d4af37]/20 to-[#aa771c]/10 border border-[#d4af37]/40 flex items-center justify-center mb-6"><i data-lucide="lock" class="w-7 h-7 text-[#f3e5ab]"></i></div>
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg text-[#d4af37]">✔</span><h3 class="font-serif-luxury text-xl font-bold text-white">Secure Shopping</h3></div>
+            <p class="text-sm text-gray-400 leading-relaxed pl-6">Direct verified store shopping and transparent payment options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-[#0e0e0e] relative overflow-hidden">
+      <div class="absolute top-0 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-[130px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-10 w-96 h-96 bg-[#25D366]/10 rounded-full blur-[130px] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/30 text-xs font-bold text-[#f3e5ab] uppercase tracking-widest mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#d4af37]"></i><span>Connect With Us</span>
+          </div>
+          <h2 class="font-serif-luxury text-3xl sm:text-5xl font-extrabold text-white tracking-wide">Contact <span class="text-gold-gradient">Bin Hafiz Mall</span></h2>
+          <p class="mt-3 text-sm sm:text-base text-gray-400">We are always here to assist you with orders, inquiries, and custom sizing.</p>
+          <div class="h-1 w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          <div class="lg:col-span-7 glass-card p-8 sm:p-10 rounded-3xl border border-[#d4af37]/30 flex flex-col justify-between gold-border-glow">
+            <div>
+              <span class="text-xs font-bold tracking-[0.25em] text-[#d4af37] uppercase">SAFDARABAD BRANCH</span>
+              <h3 class="font-serif-luxury text-2xl sm:text-3xl font-bold text-white mt-2">Visit Us or Order Online</h3>
+              <div class="mt-8 space-y-6">
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#d4af37]/40 transition-colors">
+                  <div class="w-12 h-12 rounded-xl bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-6 h-6 text-[#d4af37]"></i></div>
+                  <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider">📍 Location</h4>
+                    <p class="text-base font-bold text-white mt-0.5 location-text"></p>
+                    <p class="text-xs text-gray-400 mt-1">Safdarabad, Sheikhupura District</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#25D366]/40 transition-colors">
+                  <div class="w-12 h-12 rounded-xl bg-[#25D366]/15 border border-[#25D366]/40 flex items-center justify-center shrink-0"><i data-lucide="message-circle" class="w-6 h-6 text-[#25D366]"></i></div>
+                  <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider">📱 WhatsApp</h4>
+                    <p class="text-base font-bold text-white mt-0.5 wa-number"></p>
+                    <p class="text-xs text-gray-400 mt-1">Direct support & order placement</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#25F4EE]/40 transition-colors">
+                  <div class="w-12 h-12 rounded-xl bg-black border border-[#25F4EE]/40 flex items-center justify-center shrink-0"><i data-lucide="music-2" class="w-6 h-6 text-white"></i></div>
+                  <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider">🎵 TikTok</h4>
+                    <p class="text-base font-bold text-white mt-0.5 tt-handle"></p>
+                    <p class="text-xs text-gray-400 mt-1">Official video showcase & latest arrivals</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link w-full inline-flex items-center justify-center gap-2.5 font-bold tracking-wider text-white bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all uppercase px-5 py-2.5 text-sm"><i data-lucide="message-circle" class="w-5 h-5"></i><span>Chat on WhatsApp</span></a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="tt-link w-full inline-flex items-center justify-center gap-2.5 font-bold tracking-wider text-white bg-black hover:bg-[#080808] border border-[#25F4EE] rounded-full shadow-[0_0_15px_rgba(37,244,238,0.3)] transition-all uppercase px-5 py-2.5 text-sm"><i data-lucide="music-2" class="w-5 h-5"></i><span>Visit TikTok</span></a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 glass-card p-8 rounded-3xl border border-[#d4af37]/30 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif-luxury text-xl font-bold text-white">Send Direct Message</h3>
+              <p class="text-xs text-gray-400 mt-1">Fill out this quick form to send an instant inquiry to our WhatsApp line.</p>
+
+              <div id="contactSuccess" class="hidden my-10 p-6 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-center">
+                <i data-lucide="check-circle-2" class="w-12 h-12 text-[#25D366] mx-auto mb-3"></i>
+                <h4 class="text-lg font-bold text-white">Redirected to WhatsApp!</h4>
+                <p class="text-xs text-gray-300 mt-1">Your message has been formatted. Continue chatting on WhatsApp with Bin Hafiz Mall.</p>
+                <button id="sendAnother" class="mt-4 px-4 py-2 text-xs font-bold text-[#f3e5ab] underline">Send Another Message</button>
+              </div>
+
+              <form id="contactForm" class="mt-6 space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
+                  <input type="text" id="contactName" placeholder="e.g. Ali Ahmed" class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/10 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#d4af37] transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-gray-300 mb-1">Your Inquiry / Order Request</label>
+                  <textarea rows="4" id="contactMsg" placeholder="e.g. I want to inquire about Mens Polo Shirts availability and sizing..." required class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/10 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#d4af37] transition-colors resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 px-6 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20ba59] hover:to-[#0f7a6e] shadow-lg transition-all uppercase tracking-wider flex items-center justify-center gap-2">
+                  <i data-lucide="send" class="w-4 h-4"></i><span>Send via WhatsApp</span>
+                </button>
+              </form>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 text-center">
+              <p class="text-[11px] text-gray-500">Bin Hafiz Mall Outlet • Near UBL Bank, Safdarabad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#050505] text-white border-t border-[#d4af37]/30 pt-16 pb-8 relative overflow-hidden">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-40 bg-[#d4af37]/5 blur-[100px] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div id="footerLogo"></div>
+            <div>
+              <h3 class="font-serif-luxury font-bold text-xl sm:text-2xl text-white tracking-wider">BIN HAFIZ MALL</h3>
+              <p class="text-xs font-semibold tracking-[0.3em] text-[#d4af37] uppercase">HOUSE OF BRANDS</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 max-w-md leading-relaxed">TO MAKE BIN HAFIZ THE MOST TRUSTED BRAND. Offering high-end men's, women's apparel, couture, and luxury timepieces with direct store access in Safdarabad.</p>
+          <div class="pt-2 space-y-2 text-sm text-gray-300">
+            <div class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#d4af37] shrink-0"></i><span>📍 <span class="location-text"></span></span></div>
+            <div class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-[#25D366] shrink-0"></i><span>📞 <span class="wa-number"></span></span></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4">
+          <h4 class="font-serif-luxury text-base font-bold text-[#f3e5ab] uppercase tracking-wider mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#home" class="nav-anchor text-gray-400 hover:text-[#f3e5ab] transition-colors inline-flex items-center gap-2"><span class="text-[#d4af37] text-xs">›</span><span>Home</span></a></li>
+            <li><a href="#men-dressing" class="nav-anchor text-gray-400 hover:text-[#f3e5ab] transition-colors inline-flex items-center gap-2"><span class="text-[#d4af37] text-xs">›</span><span>Men Dressing</span></a></li>
+            <li><a href="#women-dressing" class="nav-anchor text-gray-400 hover:text-[#f3e5ab] transition-colors inline-flex items-center gap-2"><span class="text-[#d4af37] text-xs">›</span><span>Women Dressing</span></a></li>
+            <li><a href="#watches" class="nav-anchor text-gray-400 hover:text-[#f3e5ab] transition-colors inline-flex items-center gap-2"><span class="text-[#d4af37] text-xs">›</span><span>Watches</span></a></li>
+            <li><a href="#contact" class="nav-anchor text-gray-400 hover:text-[#f3e5ab] transition-colors inline-flex items-center gap-2"><span class="text-[#d4af37] text-xs">›</span><span>Contact Us</span></a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-serif-luxury text-base font-bold text-[#f3e5ab] uppercase tracking-wider mb-4">Connect With Us</h4>
+          <div class="flex flex-col space-y-3">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link w-full inline-flex items-center justify-center gap-2.5 font-bold tracking-wider text-white bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all uppercase px-5 py-2.5 text-sm"><i data-lucide="message-circle" class="w-5 h-5"></i><span>WhatsApp Support</span></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="tt-link w-full inline-flex items-center justify-center gap-2.5 font-bold tracking-wider text-white bg-black hover:bg-[#080808] border border-[#25F4EE] rounded-full shadow-[0_0_15px_rgba(37,244,238,0.3)] transition-all uppercase px-5 py-2.5 text-sm"><i data-lucide="music-2" class="w-5 h-5"></i><span>TikTok Channel</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>© 2026 Bin Hafiz Mall. All Rights Reserved.</p>
+        <div class="flex items-center gap-4 text-gray-400">
+          <span>House of Brands • Safdarabad</span><span class="text-[#d4af37]">|</span><span>Premium Luxury Theme</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Actions -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end space-y-3">
+    <button id="backToTop" class="hidden p-3.5 rounded-full bg-[#121212] text-[#f3e5ab] border border-[#d4af37]/40 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:bg-[#d4af37] hover:text-[#0b0b0b] transform hover:-translate-y-1 transition-all duration-300" aria-label="Back to top" title="Back to Top">
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="tt-link p-3.5 rounded-full bg-black border border-[#25F4EE] text-white shadow-[0_0_15px_rgba(37,244,238,0.3)] hover:shadow-[0_0_25px_rgba(37,244,238,0.6)] transform hover:-translate-y-1 hover:scale-105 transition-all duration-300" aria-label="Visit TikTok" title="Visit TikTok (@binhafiz_01)">
+      <i data-lucide="music-2" class="w-6 h-6"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="wa-link p-3.5 rounded-full bg-[#25D366] hover:bg-[#1DA851] text-white shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.8)] transform hover:-translate-y-1 hover:scale-105 transition-all duration-300" aria-label="Chat on WhatsApp" title="Chat on WhatsApp (0349-8777013)">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+  </div>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+    <div id="modalContent" class="relative w-full max-w-2xl glass-card bg-[#121212] border border-[#d4af37]/40 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.3)] animate-scaleUp" onclick="event.stopPropagation()"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
